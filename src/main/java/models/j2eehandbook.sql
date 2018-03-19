@@ -60,7 +60,7 @@ DROP TABLE IF EXISTS `used_versions`;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `used_versions` (
   `used_versions_id` int(11) NOT NULL AUTO_INCREMENT,
-  `j2ee_v1_4` varchar(6) DEFAULT NULL,
+  `java_4` varchar(6) DEFAULT NULL,
   `java_5` varchar(6) DEFAULT NULL,
   `java_6` varchar(6) DEFAULT NULL,
   `java_7` varchar(6) DEFAULT NULL,
@@ -75,16 +75,16 @@ CREATE TABLE `used_versions` (
 
 LOCK TABLES `used_versions` WRITE;
 /*!40000 ALTER TABLE `used_versions` DISABLE KEYS */;
-INSERT INTO `used_versions` (`used_versions_id`, `j2ee_v1_4`, `java_5`, `java_6`, `java_7`, `java_8`) VALUES (1,'2.1','3.0','3.1','3.2','3.3');
-INSERT INTO `used_versions` (`used_versions_id`, `j2ee_v1_4`, `java_5`, `java_6`, `java_7`, `java_8`) VALUES (2,'2.0','2.1','2.2','2.3','2.3');
-INSERT INTO `used_versions` (`used_versions_id`, `j2ee_v1_4`, `java_5`, `java_6`, `java_7`, `java_8`) VALUES (3,'2.4','2.5','3.0','3.1','4.0');
-INSERT INTO `used_versions` (`used_versions_id`, `j2ee_v1_4`, `java_5`, `java_6`, `java_7`, `java_8`) VALUES (4,NULL,'1.0','2.0','2.1','2.2');
-INSERT INTO `used_versions` (`used_versions_id`, `j2ee_v1_4`, `java_5`, `java_6`, `java_7`, `java_8`) VALUES (5,NULL,'1.2','1.2','1.2','1.2');
-INSERT INTO `used_versions` (`used_versions_id`, `j2ee_v1_4`, `java_5`, `java_6`, `java_7`, `java_8`) VALUES (6,'1.0','1.1','1.2','2.2','2.2');
-INSERT INTO `used_versions` (`used_versions_id`, `j2ee_v1_4`, `java_5`, `java_6`, `java_7`, `java_8`) VALUES (7,NULL,NULL,NULL,'1.0','1.1');
-INSERT INTO `used_versions` (`used_versions_id`, `j2ee_v1_4`, `java_5`, `java_6`, `java_7`, `java_8`) VALUES (8,'1.2','1.4','1.4','1.5','1.6');
-INSERT INTO `used_versions` (`used_versions_id`, `j2ee_v1_4`, `java_5`, `java_6`, `java_7`, `java_8`) VALUES (9,'1.2','1.2','1.2',NULL,NULL);
-INSERT INTO `used_versions` (`used_versions_id`, `j2ee_v1_4`, `java_5`, `java_6`, `java_7`, `java_8`) VALUES (10,NULL,NULL,'1.0','1.1','2.0');
+INSERT INTO `used_versions` (`used_versions_id`, java_4, `java_5`, `java_6`, `java_7`, `java_8`) VALUES (1,'2.1','3.0','3.1','3.2','3.3');
+INSERT INTO `used_versions` (`used_versions_id`, java_4, `java_5`, `java_6`, `java_7`, `java_8`) VALUES (2,'2.0','2.1','2.2','2.3','2.3');
+INSERT INTO `used_versions` (`used_versions_id`, java_4, `java_5`, `java_6`, `java_7`, `java_8`) VALUES (3,'2.4','2.5','3.0','3.1','4.0');
+INSERT INTO `used_versions` (`used_versions_id`, java_4, `java_5`, `java_6`, `java_7`, `java_8`) VALUES (4,NULL,'1.0','2.0','2.1','2.2');
+INSERT INTO `used_versions` (`used_versions_id`, java_4, `java_5`, `java_6`, `java_7`, `java_8`) VALUES (5,NULL,'1.2','1.2','1.2','1.2');
+INSERT INTO `used_versions` (`used_versions_id`, java_4, `java_5`, `java_6`, `java_7`, `java_8`) VALUES (6,'1.0','1.1','1.2','2.2','2.2');
+INSERT INTO `used_versions` (`used_versions_id`, java_4, `java_5`, `java_6`, `java_7`, `java_8`) VALUES (7,NULL,NULL,NULL,'1.0','1.1');
+INSERT INTO `used_versions` (`used_versions_id`, java_4, `java_5`, `java_6`, `java_7`, `java_8`) VALUES (8,'1.2','1.4','1.4','1.5','1.6');
+INSERT INTO `used_versions` (`used_versions_id`, java_4, `java_5`, `java_6`, `java_7`, `java_8`) VALUES (9,'1.2','1.2','1.2',NULL,NULL);
+INSERT INTO `used_versions` (`used_versions_id`, java_4, `java_5`, `java_6`, `java_7`, `java_8`) VALUES (10,NULL,NULL,'1.0','1.1','2.0');
 /*!40000 ALTER TABLE `used_versions` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;

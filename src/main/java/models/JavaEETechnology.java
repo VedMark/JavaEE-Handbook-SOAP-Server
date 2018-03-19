@@ -3,6 +3,7 @@ package models;
 import javafx.beans.property.SimpleStringProperty;
 
 public class JavaEETechnology {
+    private Integer id = null;
     private final SimpleStringProperty name;
     private final JavaEETechnologyVersions versions;
     private final SimpleStringProperty description;
@@ -11,6 +12,21 @@ public class JavaEETechnology {
         this.name = new SimpleStringProperty(name);
         this.versions = versions;
         this.description = new SimpleStringProperty(description);
+    }
+
+    public JavaEETechnology(Integer id, String name, JavaEETechnologyVersions versions, String description) {
+        this.id = id;
+        this.name = new SimpleStringProperty(name);
+        this.versions = versions;
+        this.description = new SimpleStringProperty(description);
+    }
+
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
     }
 
     public String getName() {
