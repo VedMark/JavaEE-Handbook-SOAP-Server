@@ -1,3 +1,4 @@
+import jdk.nashorn.internal.scripts.JD;
 import models.JavaEETechnology;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
@@ -10,15 +11,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class J2EeHandbookService {
+    final String JDBC_NAME = "jdbc/j2eehandbook";
     private static final Logger log = LogManager.getLogger(J2EeHandbookService.class);
-//
-//    public static void main(String[] args) {
-//        J2EeHandbookService service = new J2EeHandbookService();
-//        JavaEETechnology[] technologies = service.getAllTechnologies();
-//        for(JavaEETechnology t: technologies) {
-//            System.out.println(t.getName());
-//        }
-//    }
 
     public JavaEETechnology[] getAllTechnologies() {
         String SQL;
@@ -29,7 +23,7 @@ public class J2EeHandbookService {
                     "FROM java_technologies INNER JOIN used_versions\n" +
                     "ON java_technologies.versions = used_versions.used_versions_id;";
 
-            Database db = new Database("jdbc/j2eehandbook");
+            Database db = new Database(JDBC_NAME);
 
             Statement stmt = db.getConnection().createStatement();
             rs = stmt.executeQuery(SQL);
@@ -47,7 +41,7 @@ public class J2EeHandbookService {
         String SQL;
         PreparedStatement preparedStatement;
         try {
-            Database db = new Database("jdbc/j2eehandbook");
+            Database db = new Database(JDBC_NAME);
 
             SQL = "INSERT INTO used_versions(java_4, java_5, java_6, java_7, java_8) \n" +
                     "VALUES(?, ?, ?, ?, ?)\n" +
@@ -90,7 +84,7 @@ public class J2EeHandbookService {
         String SQL;
         PreparedStatement preparedStatement;
         try {
-            Database db = new Database("jdbc/j2eehandbook");
+            Database db = new Database(JDBC_NAME);
 
             SQL = "DELETE FROM java_technologies\n" +
                     "WHERE tech_id=?;";
@@ -106,7 +100,7 @@ public class J2EeHandbookService {
         String SQL;
         PreparedStatement preparedStatement;
         try {
-            Database db = new Database("jdbc/j2eehandbook");
+            Database db = new Database(JDBC_NAME);
 
             SQL = "INSERT INTO used_versions(java_4, java_5, java_6, java_7, java_8) \n" +
                     "VALUES(?, ?, ?, ?, ?)\n" +
