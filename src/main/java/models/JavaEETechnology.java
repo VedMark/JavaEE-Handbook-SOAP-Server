@@ -1,24 +1,13 @@
 package models;
 
-import javafx.beans.property.SimpleStringProperty;
-
 public class JavaEETechnology {
     private Integer id = null;
-    private final SimpleStringProperty name;
-    private final JavaEETechnologyVersions versions;
-    private final SimpleStringProperty description;
+    private String name;
+    private JavaEETechnologyVersions versions;
+    private String description;
 
-    public JavaEETechnology(String name, JavaEETechnologyVersions versions, String description) {
-        this.name = new SimpleStringProperty(name);
-        this.versions = versions;
-        this.description = new SimpleStringProperty(description);
-    }
-
-    public JavaEETechnology(Integer id, String name, JavaEETechnologyVersions versions, String description) {
-        this.id = id;
-        this.name = new SimpleStringProperty(name);
-        this.versions = versions;
-        this.description = new SimpleStringProperty(description);
+    public JavaEETechnology() {
+        versions = new JavaEETechnologyVersions();
     }
 
     public Integer getId() {
@@ -30,11 +19,11 @@ public class JavaEETechnology {
     }
 
     public String getName() {
-        return name.get();
+        return name;
     }
 
-    public void setName(String rName) {
-        this.name.set(rName);
+    public void setName(String name) {
+        this.name = name;
     }
 
     public String getVersionForJava4() {
@@ -78,10 +67,10 @@ public class JavaEETechnology {
     }
 
     public String getDescription() {
-        return description.get();
+        return description;
     }
 
     public void setDescription(String rDescription) {
-        this.description.set(rDescription);
+        this.description = rDescription;
     }
 }

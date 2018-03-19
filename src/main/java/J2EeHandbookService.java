@@ -1,5 +1,4 @@
 import models.JavaEETechnology;
-import models.JavaEETechnologyVersions;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 
@@ -12,6 +11,14 @@ import java.util.List;
 
 public class J2EeHandbookService {
     private static final Logger log = LogManager.getLogger(J2EeHandbookService.class);
+//
+//    public static void main(String[] args) {
+//        J2EeHandbookService service = new J2EeHandbookService();
+//        JavaEETechnology[] technologies = service.getAllTechnologies();
+//        for(JavaEETechnology t: technologies) {
+//            System.out.println(t.getName());
+//        }
+//    }
 
     public JavaEETechnology[] getAllTechnologies() {
         String SQL;
@@ -139,14 +146,16 @@ public class J2EeHandbookService {
     }
 
     private JavaEETechnology fromResultSetToJavaEETechnologyObject(ResultSet rs) throws SQLException {
-        Integer id = rs.getInt("tech_id");
-        String name = rs.getString("tech_name");
-        String v4 = rs.getString("java_4");
-        String v5 = rs.getString("java_5");
-        String v6 = rs.getString("java_6");
-        String v7 = rs.getString("java_7");
-        String v8 = rs.getString("java_8");
-        String description = rs.getString("description");
-        return new JavaEETechnology(id, name, new JavaEETechnologyVersions(v4, v5, v6, v7, v8), description);
+        JavaEETechnology technology = new JavaEETechnology();
+        technology.setId(rs.getInt("tech_id"));
+        technology.setName(rs.getString("tech_name"));
+        technology.setVersionForJava4(rs.getString("java_4"));
+        technology.setVersionForJava5(rs.getString("java_5"));
+        technology.setVersionForJava6(rs.getString("java_6"));
+        technology.setVersionForJava7(rs.getString("java_7"));
+        technology.setVersionForJava8(rs.getString("java_8"));
+        technology.setDescription(rs.getString("description"));
+
+        return technology;
     }
 }
