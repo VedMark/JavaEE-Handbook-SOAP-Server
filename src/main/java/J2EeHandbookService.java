@@ -1,4 +1,3 @@
-import jdk.nashorn.internal.scripts.JD;
 import models.JavaEETechnology;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
@@ -11,7 +10,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class J2EeHandbookService {
-    final String JDBC_NAME = "jdbc/j2eehandbook";
+    private final String JDBC_NAME = "jdbc/j2eehandbook";
     private static final Logger log = LogManager.getLogger(J2EeHandbookService.class);
 
     public JavaEETechnology[] getAllTechnologies() {
